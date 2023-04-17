@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <title>Shop</title>
+</head>
+
+<body>
+    <style>
+        .col {
+            position: relative;
+            margin-top: 15px;
+            /* add margin to create space from content above */
+        }
+
+        .bottom {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- ---------------------------------------------------------------- -->
+    <nav class="navbar navbar-light" style="background-color: #ffc107">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="https://sv1.picz.in.th/images/2023/04/17/mL4bMf.png" alt="" width="30" height="24"
+                    class="d-inline-block align-text-top" />
+                ป้าตาไก่ต้มน้ำปลา
+            </a>
+        </div>
+    </nav>
+    <!-- ------------------------------------------------------------------------- -->
+    <div class="container">
+        <div class="row row-cols-2 row-cols-lg-3">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col">
+                <h3>ยินดีต้อนรับสู่ไก่ต้มน้ำปลารสเด็ด</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col"></div>
+            <!-- Rest of the HTML code -->
+
+            <div class="col">
+                <div class="container" id="columnchart"></div>
+            </div>
+
+            <div class="col">
+                <div class="card" style="width: 18rem">
+                    <img src="https://cheechongruay.smartsme.co.th/media/Epr0MUR9gUP193WFicTR5kCf5a6pXVCuJtfCqF4CUP.jpg"
+                        class="card-img-top" />
+                    <div class="card-body">
+                        <h5 class="card-title">ไก่ต้มน้ำปลายั่วๆจ้าาาา</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="input-group input-group-sm mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">ชื่อ</span>
+                                <input type="text" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-default" id="name-input" />
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="input-group input-group-sm mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">ที่อยู่</span>
+                                <input type="text" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-default" id="address-input" />
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="input-group input-group-sm mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">จำนวน</span>
+                                <input type="text" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-default" id="quantity-input" />
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="input-group mb-3">
+                                <button class="btn btn-outline-secondary" type="button">
+                                    น้ำจิ้ม
+                                </button>
+                                <select class="form-select" id="inputGroupSelect03"
+                                    aria-label="Example select with button addon" id="sauce-input">
+                                    <option selected></option>
+                                    <option value="1">น้ำจิ้ม​ซี​ฟู้ด</option>
+                                    <option value="2">น้ำจิ้ม​แจ่ว</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="size" value="full" id="full-size" />
+                                <label class="form-check-label" for="full-size">
+                                    เต็มตัว
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="size" value="half" id="half-size"
+                                    checked />
+                                <label class="form-check-label" for="half-size">
+                                    ครึ่งตัว
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="card-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col d-flex justify-content-center">
+                                    <button type="button" class="btn btn-primary btn-lg" onclick="insert_data()">
+                                        ซื้อสินค้า
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="container">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width: 75%">ชื่อ</th>
+                                <th scope="col" style="width: 75%">ที่อยู่</th>
+                                <th scope="col">จำนวน</th>
+                                <th scope="col">น้ำจิ้ม</th>
+                                <th scope="col">ปริมาณ</th>
+                            </tr>
+                        </thead>
+                        <tbody id="datatbl"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script>
+    first_load_data = async () => {
+        let data = await fetch("http://127.0.0.1:5000/get_all_users");
+        let data_json = await data.json();
+        console.log(data_json);
+        let data_html = "";
+        data_json.forEach((item) => {
+            source_type = item.source_type == 1 ? "น้ำจิ้มซีฟู้ด" : "น้ำจิ้มแจ่ว";
+            product_type = item.product_type == 1 ? "เต็มตัว" : "ครึ่งตัว";
+            data_html += `<tr>
+                            <td>${item.name}</td>
+                            <td>${item.user_address}</td>
+                            <td>${item.quantity}</td>
+                            <td>${source_type}</td>
+                            <td>${product_type}</td>
+                        </tr>`;
+        });
+        document.getElementById("datatbl").innerHTML = data_html;
+    };
+
+    insert_data = () => {
+        const nameInput = document.getElementById("name-input");
+        const addressInput = document.getElementById("address-input");
+        const quantityInput = document.getElementById("quantity-input");
+        const sauceInput = document.getElementById("inputGroupSelect03");
+        const fullSize = document.getElementById("full-size");
+        const halfSize = document.getElementById("half-size");
+
+        const name = nameInput.value;
+        const address = addressInput.value;
+        const quantity = quantityInput.value;
+        const sauce = sauceInput.value;
+        const size = fullSize.checked ? 1 : 2;
+
+        // check input
+        if (name == "" || address == "" || quantity == "" || sauce == "") {
+            alert("กรุณากรอกข้อมูลให้ครบ");
+            return;
+        } else {
+            fetch("/store_user_info", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    name: name,
+                    user_address: address,
+                    quantity: quantity,
+                    source_type: sauce,
+                    product_type: size,
+                }),
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data);
+                    first_load_data();
+                });
+        }
+    };
+
+    loading_chart = async () => {
+
+        let half = 0;
+        let full = 0;
+
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        const data = await fetch("http://localhost:5000/get_all_users");
+        const data_json = await data.json();
+        data_json.forEach((item) => {
+            console.log(item.product_type)
+            if (item.product_type == 0) {
+                full += item.quantity;
+            } else {
+                half += item.quantity;
+            }
+        });
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ["จำนวนการขายไก่", "ประเภทสินค้า"],
+                ["ครึ่งตัว", half],
+                ["เต็มตัว", full],
+            ]);
+            // ครึ่งตัว = 0
+            // เต็มตัว = 1
+
+            console.log('half', half);
+            console.log('full', full);
+
+            var chart = new google.visualization.ColumnChart(
+                document.getElementById("columnchart")
+            );
+
+            chart.draw(data);
+        }
+    };
+
+    window.onload = () => {
+        first_load_data();
+        loading_chart();
+    };
+</script>
+
+</html>
